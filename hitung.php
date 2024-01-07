@@ -294,7 +294,49 @@
                                                     // $hasil_bulat = number_format($ll, 1, '.', '');
                                                     $hasil_bulat = floor($ll * 10) / 10;
 
+
+                                                    $median_imt['laki-laki'] = [13.4, 14.9, 16.3, 16.9, 17.2, 17.3, 17.3, 17.3, 17.3, 17.2, 17.0, 16.9, 16.8, 16.7, 16.6, 16.4, 16.3, 16.2, 16.1, 16.1, 16.0, 15.9, 15.8, 15.8, 15.7];
+                                                    $sd_plus_1['laki-laki'] =  [14.8, 16.3, 17.8, 18.4, 18.7, 18.8, 18.8, 18.8, 18.7, 18.6, 18.5, 18.4, 18.2, 18.1, 18.0, 17.8, 17.7, 17.6, 17.5, 17.4, 17.3, 17.2, 17.2, 17.1, 17.0];
+                                                    // $sd_minus_1_imt['laki-laki'] = [12.2, 13.6, 15.0, 15.5, 15.8, 15.9, 16.0, 16.0, 15.9, 15.8, 15.7, 15.6, 15.5, 15.4, 15.3, 15.2, 15.1, 15.0, 14.9, 14.9, 14.8, 14.7, 14.7, 14.6, 14.6];
+
+                                                    $median_imt['perempuan'] = [13.3, 14.6, 15.8, 16.4, 16.7, 16.8, 16.9, 16.9, 16.8, 16.7, 16.6, 16.5, 16.4, 16.2, 16.1, 16.0, 15.9, 15.8, 15.7, 15.7, 15.6, 15.5, 15.5, 15.4, 15.4];
+                                                    $sd_plus_1['perempuan'] = [14.6, 16.0, 17.3, 17.9, 18.3, 18.4, 18.5, 18.5, 18.4, 18.3, 18.2, 18.0, 17.9, 17.7, 17.6, 17.5, 17.4, 17.3, 17.2, 17.1, 17.0, 17.0, 16.9, 16.9, 16.8];
+                                                    // $sd_minus_1_imt['perempuan'] = [12.2, 13.2, 14.3, 14.9, 15.2, 15.4, 15.5, 15.5, 15.4, 15.3, 15.2, 15.1, 15.0, 14.9, 14.8, 14.7, 14.6, 14.5, 14.4, 14.4, 14.3, 14.3, 14.2, 14.2, 14.2];
+
+                                                    $median_imt_24['laki-laki'] =     [16.0, 16.0, 15.9, 15.9, 15.9, 15.8, 15.8, 15.8, 15.7, 15.7, 15.7, 15.6, 15.6, 15.6, 15.5, 15.5, 15.5, 15.5, 15.4, 15.4, 15.4, 15.4, 15.4, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.2, 15.2, 15.2, 15.2, 15.2, 15.2];
+                                                    // $sd_minus_1_imt_24['laki-laki'] = [14.8, 14.8, 14.8, 14.7, 14.7, 14.7, 14.6, 14.6, 14.6, 14.5, 14.5, 14.5, 14.4, 14.4, 14.4, 14.4, 14.4, 14.3, 14.3, 14.3, 14.3, 14.3, 14.3, 14.2, 14.2, 14.2, 14.2, 14.2, 14.2, 14.2, 14.2, 14.1, 14.1, 14.1, 14.1, 14.1, 14.1];
+                                                    $sd_plus_1_imt_24['laki-laki'] =  [17.3, 17.3, 17.3, 17.2, 17.2, 17.1, 17.1, 17.1, 17.0, 17.0, 17.0, 16.9, 16.9, 16.9, 16.8, 16.8, 16.8, 16.8, 16.8, 16.7, 16.7, 16.7, 16.7, 16.7, 16.7, 16.7, 16.7, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6, 16.6];
+
+                                                    $median_imt_24['perempuan'] =     [15.7, 15.7, 15.6, 15.6, 15.6, 15.6, 15.5, 15.5, 15.5, 15.5, 15.4, 15.4, 15.4, 15.4, 15.4, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.2, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3, 15.3];
+                                                    // $sd_minus_1_imt_24['perempuan'] = [14.4, 14.4, 14.4, 14.4, 14.3, 14.3, 14.3, 14.3, 14.3, 14.2, 14.2, 14.2, 14.2, 14.1, 14.1, 14.1, 14.1, 14.1, 14.1, 14.1,14.0, 14.0, 14.0, 14.0, 14.0, 14.0, 13.9, 13.9, 13.9, 13.9, 13.9, 13.9, 13.9, 13.9, 13.9, 13.9, 13.9, 13.9];
+                                                    $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.9, 16.9, 16.9, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.8, 16.9, 16.9, 16.9, 16.9];
+
+                                                    $tinggi_m = $tinggi * 0.01;
+                                                    // echo $tinggi_m;
+                                                    $imt = $berat / ($tinggi_m*$tinggi_m);
+                                                    $imt2 = number_format($imt, 2);
+                                                    // echo $imt2;
+                                                    if($umur > 24){
+                                                        $c5_median = $median_imt_24[$jenis_kelamin][$umur - 24];
+                                                        $dataplusc5 = $sd_plus_1_imt_24[$jenis_kelamin][$umur -24];
+                                                        $Zscorec5 = ($imt2 - $c5_median) / ($dataplusc5 - $c5_median);
+                                                    }else {
+                                                        $c5_median = $median_imt[$jenis_kelamin][$umur];
+                                                        $dataplusc5 = $sd_plus_1[$jenis_kelamin][$umur];
+                                                        $Zscorec5 = ($imt2 - $c5_median) / ($dataplusc5 - $c5_median);
+                                                    }
+
                                                     
+                                                    // echo $tinggi_m . "<br>";
+                                                    // echo $berat . "<br>";
+                                                    // echo $imt . "<br>";
+                                                    // echo $imt2 . "<br>";
+                                                    // echo $c5_median . "<br>";
+                                                    // echo $dataplusc5. "<br>";
+                                                    // echo $Zscorec5. "<br>";
+                                                    // echo "<br>";
+
+                                              
                                                   
                                                     // echo "Tinggi: " . $tinggi . "<br>";
                                                     // echo "TB Median: " . $tb_median . "<br>";
@@ -302,24 +344,40 @@
                                                     // echo "Nilai Zscore: " . $Zscoretb . "<br>";
                                                                                                  
                                                     if ($Zscore < -3) {
-                                                        $kategori = "Berat Badan Sangat Kurang (Severely Underweight)";
+                                                        $kategori = "Sangat Kurang";
                                                     } elseif ($Zscore >= -3 && $Zscore <= -2) {
-                                                        $kategori = "Berat Badan Kurang (Underweight)";
+                                                        $kategori = "Kurang";
                                                     } elseif ($Zscore >= -2 && $Zscore <= 1) {
-                                                        $kategori = "Berat Badan Normal";
+                                                        $kategori = "Normal";
                                                     } else {
-                                                        $kategori = "Risiko Berat Badan Lebih (Overweight)";
+                                                        $kategori = "Berat Badan Lebih";
                                                     }
 
                                                     if ($Zscoretb < -3) {
-                                                        $kategoritb = "Sangat Pendek (Severely Stunted)";
+                                                        $kategoritb = "Sangat Pendek";
                                                     } elseif ($Zscoretb >= -3 && $Zscoretb <= -2) {
-                                                        $kategoritb = "Pendek (Stunted)";
+                                                        $kategoritb = "Pendek";
                                                     } elseif ($Zscoretb >= -2 && $Zscoretb <= 3) {
                                                         $kategoritb = "Normal";
                                                     } else {
-                                                        $kategoritb = "Tinggi (Stunted)";
+                                                        $kategoritb = "Tinggi";
                                                     }
+
+                                                    
+                                                    if ($Zscorec5 < -3) {
+                                                        $status_gizi = "Gizi Buruk (Severely Wasted)";
+                                                    } elseif ($Zscorec5 >= -3 && $Zscorec5 < -2) {
+                                                        $status_gizi = "Gizi Kurang (Wasted)";
+                                                    } elseif ($Zscorec5 >= -2 && $Zscorec5 <= 1) {
+                                                        $status_gizi = "Gizi Baik (Normal)";
+                                                    } elseif ($Zscorec5 > 1 && $Zscorec5 <= 2) {
+                                                        $status_gizi = "Berisiko Gizi Lebih (Possible Risk of Overweight)";
+                                                    } elseif ($Zscorec5 > 2 && $Zscorec5 <= 3) {
+                                                        $status_gizi = "Gizi Lebih (Overweight)";
+                                                    } else {
+                                                        $status_gizi = "Obesitas (Obese)";
+                                                    }                                                    
+
                                                 ?>
                                                 <td class="text-truncate"><?php echo $no ?></td>
                                                 <td class="text-truncate"><?php echo $nama ?></td>
@@ -327,6 +385,7 @@
                                                 <td class="text-truncate"><?php echo $kategoritb . " " . $Zscoretb ?> </td>
                                                 <td class="text-truncate"><?php echo $tinggi ?> </td>
                                                 <td class="text-truncate"><?php echo $hasil_bulat ?> </td>
+                                                <td class="text-truncate"><?php echo $status_gizi ?> </td>
                                                
                                             </tr>
                                             <?php
