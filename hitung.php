@@ -649,6 +649,30 @@
                                                     }
                                                     // $hasil_bulat = number_format($ll, 1, '.', '');
                                                     $hasil_bulat = floor($ll * 10) / 10;
+                                                    // $hasil_persen = 
+                                                    $persentilData = array(
+                                                        'gizi_buruk' => 70,
+                                                        'gizi_kurang' => 84.9,
+                                                        'gizi_baik' => 110,
+                                                        'overweight' => 120,
+                                                        'obesitas' => 121
+                                                        // Sesuaikan nilai persentil sesuai kebutuhan
+                                                    );
+                                                    $statusGiziAnak = '';
+                                                    if ($hasil_bulat < $persentilData['gizi_buruk']) {
+                                                        $statusGiziAnak = 'Gizi Buruk';
+                                                    } elseif ($hasil_bulat >= $persentilData['gizi_buruk'] && $hasil_bulat <= $persentilData['gizi_kurang']) {
+                                                        $statusGiziAnak = 'Gizi Kurang';
+                                                    } elseif ($hasil_bulat >= $persentilData['gizi_kurang'] && $hasil_bulat <= $persentilData['gizi_baik']) {
+                                                        $statusGiziAnak = 'Gizi Baik';
+                                                    } elseif ($hasil_bulat > $persentilData['gizi_baik'] && $hasil_bulat <= $persentilData['overweight']) {
+                                                        $statusGiziAnak = 'Overweight';
+                                                    } elseif ($hasil_bulat > $persentilData['overweight'] && $hasil_bulat <= $persentilData['obesitas']) {
+                                                        $statusGiziAnak = 'Obesitas';
+                                                    } else {
+                                                        $statusGiziAnak = 'Nilai LL di atas persentil tertinggi';
+                                                    }
+                                                    
 
 
                                                     $median_imt['laki-laki'] = [13.4, 14.9, 16.3, 16.9, 17.2, 17.3, 17.3, 17.3, 17.3, 17.2, 17.0, 16.9, 16.8, 16.7, 16.6, 16.4, 16.3, 16.2, 16.1, 16.1, 16.0, 15.9, 15.8, 15.8, 15.7];
@@ -756,7 +780,7 @@
                                                 <td class="text-truncate"><?php echo $kategori . " " . $Zscore ?> </td>
                                                 <td class="text-truncate"><?php echo $kategoritb . " " . $Zscoretb ?> </td>
                                                 <td class="text-truncate"><?php echo $status_c3 . " " . $c3_zscore?> </td>
-                                                <td class="text-truncate"><?php echo $hasil_bulat ?> </td>
+                                                <td class="text-truncate"><?php echo $statusGiziAnak . " " . $hasil_bulat ?> </td>
                                                 <td class="text-truncate"><?php echo $status_gizi . " " . $Zscorec5 ?> </td>
                                                
                                             </tr>
