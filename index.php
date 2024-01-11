@@ -46,12 +46,18 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
-                                        <div class="avatar avatar-icon avatar-lg avatar-blue">
+                                        <!-- <div class="avatar avatar-icon avatar-lg avatar-blue">
                                             <i class="anticon anticon-dollar"></i>
-                                        </div>
+                                        </div> -->
                                         <div class="m-l-15">
-                                            <h2 class="m-b-0">$23,523</h2>
-                                            <p class="m-b-0 text-muted">Profit</p>
+                                            <h2 class="m-b-0">
+                                            <?php // Query to get total items
+                                            $sql = "SELECT COUNT(*) AS jumlah FROM alternatif";
+                                            $resultBarang = $conn->query($sql); 
+                                            $hasilBarang = mysqli_fetch_array($resultBarang);
+                                            echo "{$hasilBarang['jumlah']}";?>
+                                            </h2>
+                                            <p class="m-b-0 text-muted">Alternatif</p>
                                         </div>
                                     </div>
                                 </div>
@@ -61,12 +67,18 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
-                                        <div class="avatar avatar-icon avatar-lg avatar-cyan">
+                                        <!-- <div class="avatar avatar-icon avatar-lg avatar-cyan">
                                             <i class="anticon anticon-line-chart"></i>
-                                        </div>
+                                        </div> -->
                                         <div class="m-l-15">
-                                            <h2 class="m-b-0">+ 17.21%</h2>
-                                            <p class="m-b-0 text-muted">Growth</p>
+                                            <h2 class="m-b-0">
+                                            <?php // Query to get total items
+                                            $sql = "SELECT COUNT(*) AS jumlah FROM kriteria";
+                                            $resultBarang = $conn->query($sql); 
+                                            $hasilBarang = mysqli_fetch_array($resultBarang);
+                                            echo "{$hasilBarang['jumlah']}";?>
+                                            </h2>
+                                            <p class="m-b-0 text-muted">Kriteria</p>
                                         </div>
                                     </div>
                                 </div>
@@ -76,18 +88,24 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
-                                        <div class="avatar avatar-icon avatar-lg avatar-gold">
+                                        <!-- <div class="avatar avatar-icon avatar-lg avatar-gold">
                                             <i class="anticon anticon-profile"></i>
-                                        </div>
+                                        </div> -->
                                         <div class="m-l-15">
-                                            <h2 class="m-b-0">3,685</h2>
-                                            <p class="m-b-0 text-muted">Orders</p>
+                                            <h2 class="m-b-0">
+                                            <?php // Query to get total items
+                                            $sql = "SELECT COUNT(*) AS jumlah FROM penilaian";
+                                            $resultBarang = $conn->query($sql); 
+                                            $hasilBarang = mysqli_fetch_array($resultBarang);
+                                            echo "{$hasilBarang['jumlah']}";?>
+                                            </h2>
+                                            <p class="m-b-0 text-muted">Penilaian</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-lg-3">
+                        <!-- <div class="col-md-6 col-lg-3">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
@@ -101,7 +119,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- Content Wrapper END -->

@@ -39,8 +39,8 @@
                                             <img src="assets/images/avatars/thumb-3.jpg" alt="">
                                         </div>
                                         <div class="m-l-10">
-                                            <p class="m-b-0 text-dark font-weight-semibold">Marshall Nichols</p>
-                                            <p class="m-b-0 opacity-07">UI/UX Desinger</p>
+                                            <p class="m-b-0 text-dark font-weight-semibold"><?php echo $_SESSION['nama'] ?></p>
+                                            <!-- <p class="m-b-0 opacity-07">UI/UX Desinger</p> -->
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                             <i class="anticon opacity-04 font-size-16 anticon-logout"></i>
                                             <span class="m-l-10">Logout</span>
                                         </div>
-                                        <i class="anticon font-size-10 anticon-right"></i>
+                                        <!-- <i class="anticon font-size-10 anticon-right"></i> -->
                                     </div>
                                 </a>
                             </div>
