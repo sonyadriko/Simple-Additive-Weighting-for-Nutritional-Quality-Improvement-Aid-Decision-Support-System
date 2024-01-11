@@ -45,10 +45,10 @@
                                         <input type="hidden" name="login_input" value="1">
                                         <div class="form-group">
                                             <div class="d-flex align-items-center justify-content-between">
-                                                <span class="font-size-13 text-muted">
+                                                <!-- <span class="font-size-13 text-muted">
                                                     Don't have an account? 
                                                     <a class="small" href=""> Signup</a>
-                                                </span>
+                                                </span> -->
                                                 <button type="submit" class="btn btn-primary" name="login_button">Sign In</button>
                                             </div>
                                         </div>
