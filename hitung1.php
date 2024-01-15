@@ -1028,12 +1028,12 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                 $get_data = mysqli_query($conn, "SELECT * FROM penilaian 
                                                 JOIN alternatif ON alternatif.id_alternatif = penilaian.id_alternatif");
 
+                                             
                                                 $maxC1 = 0;
                                                 $maxC2 = 0;
                                                 $maxC3 = 0;
                                                 $maxC4 = 0;
                                                 $maxC5 = 0;
-
                                                 while($display = mysqli_fetch_array($get_data)) {
                                                     $id = $display['id_penilaian'];
                                                     $nama = $display['nama_alternatif'];
@@ -1159,13 +1159,10 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                         $status_c3 = 1;
                                                     } elseif ($c3_zscore > 1 && $c3_zscore <= 2) {
                                                         $status_c3 = 0.35;
-                                                    } elseif ($c3_zscore > 2 && $c3_zscore <= 3) {
-                                                        $status_c3 = 0.45;
-                                                    } elseif ($c3_zscore > 3) {
-                                                        $status_c3 = 0.55;
                                                     } else {
-                                                        $status_c3 = "Data Tidak Valid";
-                                                    }
+                                                        $status_c3 = 0.45;
+                                                    } 
+                                            
 
                                                     
                                                     if ($Zscorec5 < -3) {
@@ -1183,6 +1180,8 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                     }  
 
 
+                                                   
+
                                                     if ($kategori > $maxC1) {
                                                         $maxC1 = $kategori;
                                                     }
@@ -1192,6 +1191,8 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                     if ($status_c3 > $maxC3) {
                                                         $maxC3 = $status_c3;
                                                     }
+                                                    var_dump($status_c3, $maxC3);
+                                                    echo "<br>";
                                                     if ($statusGiziAnak > $maxC4) {
                                                         $maxC4 = $statusGiziAnak;
                                                     }
@@ -1202,8 +1203,12 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                     $normC1 = $kategori / $maxC1;
                                                     $normC2 = $kategoritb / $maxC2;
                                                     $normC3 = $status_c3 / $maxC3;
+                                                    // echo "status : " . $status_c3 . " "; 
+                                                    // echo "max c3" . " " .$maxC3.  "<br>";
                                                     $normC4 = $statusGiziAnak / $maxC4;
                                                     $normC5 = $status_gizi / $maxC5;
+                                                    // echo "status : " . $status_gizi . " "; 
+                                                    // echo "max c3" . " " .$maxC5.  "<br>";
                                         
                                                 ?>
                                                 <td class="text-truncate"><?php echo $no ?></td>
