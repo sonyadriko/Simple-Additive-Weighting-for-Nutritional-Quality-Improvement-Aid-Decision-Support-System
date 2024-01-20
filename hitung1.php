@@ -563,12 +563,11 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                             <tbody>
                                             <?php 
                                                 $no = 1;
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian 
-                                                JOIN alternatif ON alternatif.id_alternatif = penilaian.id_alternatif");
+                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
 
                                                 while($display = mysqli_fetch_array($get_data)) {
                                                     $id = $display['id_penilaian'];
-                                                    $nama = $display['nama_alternatif'];
+                                                    $nama = $display['alternatif'];
                                                     $jenis_kelamin = $display['jenis_kelamin'];
                                                     $umur = $display['umur'];
                                                     $berat = $display['berat'];
@@ -778,16 +777,16 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                 ?>
                                                 <td class="text-truncate"><?php echo $no ?></td>
                                                 <td class="text-truncate"><?php echo $nama ?></td>
-                                                <td class="text-truncate"><?php echo $kategori . " " . $Zscore ?> </td>
-                                                <!-- <td class="text-truncate"><?php echo $kategori ?> </td> -->
-                                                <td class="text-truncate"><?php echo $kategoritb . " " . $Zscoretb ?> </td>
-                                                <!-- <td class="text-truncate"><?php echo $kategoritb  ?> </td> -->
-                                                <td class="text-truncate"><?php echo $status_c3 . " " . $c3_zscore?> </td>
-                                                <!-- <td class="text-truncate"><?php echo $status_c3 ?> </td> -->
-                                                <td class="text-truncate"><?php echo $statusGiziAnak . " " . $hasil_bulat ?> </td>
-                                                <!-- <td class="text-truncate"><?php echo $statusGiziAnak  ?> </td> -->
-                                                <td class="text-truncate"><?php echo $status_gizi . " " . $Zscorec5 ?> </td>
-                                                <!-- <td class="text-truncate"><?php echo $status_gizi  ?> </td> -->
+                                                <!-- <td class="text-truncate"><?php echo $kategori . " " . $Zscore ?> </td> -->
+                                                <td class="text-truncate"><?php echo $kategori ?> </td>
+                                                <!-- <td class="text-truncate"><?php echo $kategoritb . " " . $Zscoretb ?> </td> -->
+                                                <td class="text-truncate"><?php echo $kategoritb  ?> </td>
+                                                <!-- <td class="text-truncate"><?php echo $status_c3 . " " . $c3_zscore?> </td> -->
+                                                <td class="text-truncate"><?php echo $status_c3 ?> </td>
+                                                <!-- <td class="text-truncate"><?php echo $statusGiziAnak . " " . $hasil_bulat ?> </td> -->
+                                                <td class="text-truncate"><?php echo $statusGiziAnak  ?> </td>
+                                                <!-- <td class="text-truncate"><?php echo $status_gizi . " " . $Zscorec5 ?> </td> -->
+                                                <td class="text-truncate"><?php echo $status_gizi  ?> </td>
                                                
                                             </tr>
                                             <?php
@@ -827,12 +826,11 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                             <tbody>
                                             <?php 
                                                 $no = 1;
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian 
-                                                JOIN alternatif ON alternatif.id_alternatif = penilaian.id_alternatif");
+                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
 
                                                 while($display = mysqli_fetch_array($get_data)) {
                                                     $id = $display['id_penilaian'];
-                                                    $nama = $display['nama_alternatif'];
+                                                    $nama = $display['alternatif'];
                                                     $jenis_kelamin = $display['jenis_kelamin'];
                                                     $umur = $display['umur'];
                                                     $berat = $display['berat'];
@@ -1025,8 +1023,7 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                             <tbody>
                                             <?php 
                                                 $no = 1;
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian 
-                                                JOIN alternatif ON alternatif.id_alternatif = penilaian.id_alternatif");
+                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
 
                                                 $normalizedValues = [];
                                                 $maxValues = [
@@ -1039,7 +1036,7 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
 
                                                 while($display = mysqli_fetch_array($get_data)) {
                                                     $id = $display['id_penilaian'];
-                                                    $nama = $display['nama_alternatif'];
+                                                    $nama = $display['alternatif'];
                                                     $jenis_kelamin = $display['jenis_kelamin'];
                                                     $umur = $display['umur'];
                                                     $berat = $display['berat'];
@@ -1256,8 +1253,7 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                 $no = 1;
                                                 $bobot_kriteria = [];
                                                 $alternatif_nilai_akhir = [];
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian 
-                                                JOIN alternatif ON alternatif.id_alternatif = penilaian.id_alternatif");
+                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
 
                                                 $q = mysqli_query($conn, "SELECT bobot_kriteria FROM kriteria ORDER BY id_kriteria");
                                                 while($row = mysqli_fetch_assoc($q)) {
@@ -1266,7 +1262,7 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
 
                                                 while($display = mysqli_fetch_array($get_data)) {
                                                     $id = $display['id_penilaian'];
-                                                    $nama = $display['nama_alternatif'];
+                                                    $nama = $display['alternatif'];
                                                     $jenis_kelamin = $display['jenis_kelamin'];
                                                     $umur = $display['umur'];
                                                     $berat = $display['berat'];

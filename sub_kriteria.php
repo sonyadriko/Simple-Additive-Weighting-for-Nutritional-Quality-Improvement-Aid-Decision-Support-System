@@ -44,9 +44,9 @@
                             <div class="card">
 
                                 <div class="card-body">
-                                <h4>Data Kriteria</h4>
+                                <h4>Data Sub Kriteria</h4>
 
-                                    <!-- <a href="tambah_kriteria.php" class="btn btn-primary btn-user">Tambah Kriteria</a> -->
+                                    <a href="tambah_sub_kriteria.php" class="btn btn-primary btn-user">Tambah Sub Kriteria</a>
                                     
                                     <div class="table-responsive">
                                         <table class="table table-hover">
@@ -54,8 +54,9 @@
                                                 <tr>
                                                     <th scope="col">No</th>
                                                     <th scope="col">Kriteria</th>
+                                                    <th scope="col">Sub Kriteria</th>
                                                     <th scope="col">Bobot</th>
-                                                    <th scope="col">Tipe</th>
+                                                    <!-- <th scope="col">Tipe</th> -->
                                                     <th scope="col">Action</th>
                                                     <!-- <th scope="col">Handle</th> -->
                                                 </tr>
@@ -63,22 +64,21 @@
                                             <tbody>
                                             <?php 
                 $no = 1;
-                $get_data = mysqli_query($conn, "select * from kriteria");
+                $get_data = mysqli_query($conn, "select * from sub_kriteria join kriteria on sub_kriteria.id_kriteria = kriteria.id_kriteria");
                 while($display = mysqli_fetch_array($get_data)) {
-                    $id = $display['id_kriteria'];
-                    $nama = $display['nama_kriteria'];
-                    $bobot = $display['bobot_kriteria'];
-                    $tipe = $display['tipe_kriteria'];
-
+                    $id = $display['id_sub_kriteria'];
+                    $id_kriteria = $display['nama_kriteria'];
+                    $kategori = $display['kategori_status_gizi'];
+                    $bobot = $display['bobot_kategori'];
                 
                 ?>
                 <td class="text-truncate"><?php echo $no ?></td>
-                <td class="text-truncate"><?php echo $nama ?></td>
+                <td class="text-truncate"><?php echo $id_kriteria ?></td>
+                <td class="text-truncate"><?php echo $kategori ?></td>
                 <td class="text-truncate"><?php echo $bobot ?></td>
-                <td class="text-truncate"><?php echo $tipe ?></td>
                 <td class="text-truncate">
-                    <a href='ubah_barang.php?GetID=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Ubah' id='editbtn' class="btn btn-primary btn-user" ></a>
-                    <a href='delete_barang.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
+                    <a href='update_sub_kriteria.php?GetID=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Ubah' id='editbtn' class="btn btn-primary btn-user" ></a>
+                    <a href='delete_sub_kriteria.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
                 </td>
               </tr>
               <?php

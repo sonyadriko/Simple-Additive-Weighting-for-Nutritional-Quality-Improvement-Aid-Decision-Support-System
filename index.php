@@ -46,27 +46,6 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
-                                        <!-- <div class="avatar avatar-icon avatar-lg avatar-blue">
-                                            <i class="anticon anticon-dollar"></i>
-                                        </div> -->
-                                        <div class="m-l-15">
-                                            <h2 class="m-b-0">
-                                            <?php // Query to get total items
-                                            $sql = "SELECT COUNT(*) AS jumlah FROM alternatif";
-                                            $resultBarang = $conn->query($sql); 
-                                            $hasilBarang = mysqli_fetch_array($resultBarang);
-                                            echo "{$hasilBarang['jumlah']}";?>
-                                            </h2>
-                                            <p class="m-b-0 text-muted">Alternatif</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="media align-items-center">
                                         <!-- <div class="avatar avatar-icon avatar-lg avatar-cyan">
                                             <i class="anticon anticon-line-chart"></i>
                                         </div> -->

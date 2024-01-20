@@ -48,7 +48,7 @@ $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
                                     <h4>Tambah Data penilaian</h4>
                                     <br>
                                     <form action="tambah_penilaian.php" method="post">
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="selectAlternatif">Alternatif</label>
                                             <select class="form-control" id="selectAlternatif" name="selectAlternatif">
                                                 <?php
@@ -57,17 +57,28 @@ $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
                                                 }
                                                 ?>
                                             </select>
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label for="inputalternatif">Alternatif</label>
+                                            <input type="text" class="form-control" id="inputalternatif" name="inputalternatif" placeholder="Masukan Alternatif" required>       
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputnama">Umur (Bulan)</label>
+                                            <label for="jeniskelamin">Jenis Kelamin</label>
+                                            <select class="form-control" id="jeniskelamin" name="jeniskelamin">
+                                                <option value="laki-laki">Laki-laki</option>
+                                                <option value="perempuan">Perempuan</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputumur">Umur (Bulan)</label>
                                             <input type="text" class="form-control" id="inputumur" name="inputumur" placeholder="Masukan Umur (Bulan)..." required>       
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputnama">Berat (KG)</label>
+                                            <label for="inputberat">Berat (KG)</label>
                                             <input type="text" class="form-control" id="inputberat" name="inputberat" placeholder="Masukan Berat (KG)..." required>       
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputnama">Tinggi (CM)</label>
+                                            <label for="inputtinggi">Tinggi (CM)</label>
                                             <input type="text" class="form-control" id="inputtinggi" name="inputtinggi" placeholder="Masukan Tinggi (CM)..." required>       
                                         </div>
                                         <div class="form-group">
@@ -116,28 +127,30 @@ $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
 include 'koneksi.php';
 
 if (isset($_POST['submit'])) {
-    $id_alternatif = $_POST['selectAlternatif'];
+    // $id_alternatif = $_POST['selectAlternatif'];
 
-    // Validate and sanitize other input fields
+    // Validate and sanitize other input 
+    $alternatif = $_POST['inputalternatif'];
+    $jenis_kelamin = $_POST['jeniskelamin'];
     $umur = mysqli_real_escape_string($conn, $_POST['inputumur']);
     $berat = mysqli_real_escape_string($conn, $_POST['inputberat']);
     $tinggi = mysqli_real_escape_string($conn, $_POST['inputtinggi']);
     $lingkar_lengan = mysqli_real_escape_string($conn, $_POST['inputlila']);
 
     // Check if the id_alternatif already exists
-    $checkQuery = "SELECT * FROM penilaian WHERE id_alternatif = '$id_alternatif'";
-    $checkResult = mysqli_query($conn, $checkQuery);
+    // $checkQuery = "SELECT * FROM penilaian WHERE id_alternatif = '$id_alternatif'";
+    // $checkResult = mysqli_query($conn, $checkQuery);
 
-    if (mysqli_num_rows($checkResult) > 0) {
-        // If the id_alternatif already exists, display an alert
-        echo "<script>alert('Data untuk Alternatif ini sudah ada.')</script>";
-    } else {
+    // if (mysqli_num_rows($checkResult) > 0) {
+    //     // If the id_alternatif already exists, display an alert
+    //     echo "<script>alert('Data untuk Alternatif ini sudah ada.')</script>";
+    // } else {
         // Insert data into 'penilaian' table using prepared statements
-        $insertData = $conn->prepare("INSERT INTO penilaian (id_penilaian, id_alternatif, umur, berat, tinggi, lila) 
-                                      VALUES (NULL, ?, ?, ?, ?, ?)");
+        $insertData = $conn->prepare("INSERT INTO penilaian (id_penilaian, alternatif, jenis_kelamin, umur, berat, tinggi, lila) 
+                                      VALUES (NULL, ?, ?, ?, ?, ?, ?)");
 
         // Bind parameters
-        $insertData->bind_param("sssss", $id_alternatif, $umur, $berat, $tinggi, $lingkar_lengan);
+        $insertData->bind_param("ssssss", $alternatif, $jenis_kelamin, $umur, $berat, $tinggi, $lingkar_lengan);
 
         // Execute the prepared statement
         $insertResult = $insertData->execute();
@@ -155,7 +168,7 @@ if (isset($_POST['submit'])) {
 
         // Close the prepared statement
         $insertData->close();
-    }
+    // }
 }
 ?>
 

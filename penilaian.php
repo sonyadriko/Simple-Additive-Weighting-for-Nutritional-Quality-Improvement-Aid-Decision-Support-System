@@ -67,12 +67,11 @@
                                             <tbody>
                                             <?php 
                 $no = 1;
-                $get_data = mysqli_query($conn, "SELECT * FROM penilaian 
-                JOIN alternatif ON alternatif.id_alternatif = penilaian.id_alternatif");
+                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
 
                 while($display = mysqli_fetch_array($get_data)) {
                     $id = $display['id_penilaian'];
-                    $nama = $display['nama_alternatif'];
+                    $nama = $display['alternatif'];
                     $jenis_kelamin = $display['jenis_kelamin'];
                     $umur = $display['umur'];
                     $berat = $display['berat'];
@@ -90,7 +89,7 @@
                 <td class="text-truncate"><?php echo $lila ?> CM</td>
                 <td class="text-truncate">
                     <a href='edit_penilaian.php?GetID=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Ubah' id='editbtn' class="btn btn-primary btn-user" ></a>
-                    <a href='delete_barang.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
+                    <a href='delete_penilaian.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
                 </td>
               </tr>
               <?php

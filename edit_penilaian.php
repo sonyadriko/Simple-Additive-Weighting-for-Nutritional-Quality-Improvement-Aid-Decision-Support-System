@@ -8,10 +8,11 @@
     $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
 
     $id_data = $_GET['GetID'];
-    $query = mysqli_query($conn, "SELECT * FROM penilaian JOIN alternatif ON alternatif.id_alternatif = penilaian.id_alternatif WHERE id_penilaian = '".$id_data."'");
+    $query = mysqli_query($conn, "SELECT * FROM penilaian WHERE id_penilaian = '".$id_data."'");
     while($row = mysqli_fetch_assoc($query)){
         
-        $nama = $row['nama_alternatif'];
+        $nama = $row['alternatif'];
+        $jeniskelamin = $row['jenis_kelamin'];
         $umur = $row['umur'];
         $berat = $row['berat'];
         $tinggi = $row['tinggi'];
@@ -62,15 +63,14 @@
                                     <form action="update_penilaian.php?id=<?php echo $id_data ?>" method="post">
                                         <div class="form-group">
                                             <label for="selectAlternatif">Alternatif</label>
-                                                <input type="text" class="form-control" id="inputumur" name="inputumur" value="<?php echo $nama ?>" placeholder="Masukan Umur (Bulan)..."  disabled readonly>       
-                                            <!-- <select class="form-control" id="selectAlternatif" name="selectAlternatif">
-                                                <?php
-                                                foreach ($alternatifData as $alternatif) {
-                                                    echo '<option value="' . $alternatif['id_alternatif'] . '">' . $alternatif['nama_alternatif'] . '</option>';
-                                                }
-                                                ?>
-                                            </select> -->
-                                        
+                                            <input type="text" class="form-control" id="inputalternatif" name="inputalternatif" value="<?php echo $nama ?>" placeholder="Masukan Alternatif..."  required>       
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="jeniskelamin">Jenis Kelamin</label>
+                                            <select class="form-control" id="jeniskelamin" name="jeniskelamin">
+                                                <option value="laki-laki" <?php echo ($jeniskelamin == 'laki-laki') ? 'selected' : ''; ?>>Laki-laki</option>
+                                                <option value="perempuan" <?php echo ($jeniskelamin == 'perempuan') ? 'selected' : ''; ?>>Perempuan</option>
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputnama">Umur (Bulan)</label>
