@@ -1428,24 +1428,43 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
 
                                                 $no = 1;
                                                 $numbertable = 1;
+                                                $alternatif_nilai_akhir_encoded = [];
+                                                
                                                 foreach ($alternatif_nilai_akhir as $alt) {
                                                     echo "<tr>";
                                                     echo "<td class='text-truncate'>" . $numbertable++ . "</td>";
                                                     echo "<td class='text-truncate'>" . $alt['nama'] . "</td>";
                                                     echo "<td class='text-truncate'>" . $alt['nilai_akhir'] . "</td>";
-                                                    echo "<td class='text-truncate'>" . $no++ . "</td>"; // Ranking bisa diambil dari nomor iterasi karena sudah terurut
+                                                    echo "<td class='text-truncate'>" . $no++ . "</td>";
                                                     echo "</tr>";
+                                                
+                                                    $item = [
+                                                        'nama' => $alt['nama'],
+                                                        'nilai_akhir' => $alt['nilai_akhir'],
+                                                        'ranking' => $no - 1
+                                                    ];
+                                                
+                                                    $alternatif_nilai_akhir_encoded[] = $item;
                                                 }
+                                                
+                                                // Convert the array to JSON
+                                                $alternatif_nilai_akhir_json = json_encode($alternatif_nilai_akhir_encoded);
+                                                
+                                                // Echo the JSON
+                                                // echo $alternatif_nilai_akhir_json;
 
                                                 ?>
-                                                
-                                            
                                             </tr>
                                             </tbody>
                                         </table>
+                                        <script>
+                                            var hasilhitungjson = <?php echo json_encode($alternatif_nilai_akhir_encoded); ?>;
+                                            console.log(hasilhitungjson);
+                                        </script>
                                     </div>
                                 </div>
                             </div>
+                            <button id="saveButton" class="btn btn-success" onclick="saveData()">Save</button>
                         </div>
                     </div>
                 </div>
@@ -1460,9 +1479,7 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                 <!-- Footer END -->
 
             </div>
-            <!-- Page Container END -->
-
-          
+            <!-- Page Container END -->          
         </div>
     </div>
 
@@ -1476,6 +1493,100 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
 
     <!-- Core JS -->
     <script src="assets/js/app.min.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        
+        var hasilhitung = []; 
+
+        const saveButton = document.getElementById('saveButton');
+        // console.log('Save Button:', saveButton);
+
+        if (saveButton) {
+            console.log('Button Disabled:', saveButton.disabled);
+        }
+
+        // Event listener for form submission
+        document.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+            saveData(); // Pass hasilhitung to saveData function
+        });
+    });
+
+    async function saveData() {
+        const date = new Date();
+        var data = {
+            tanggal: date
+        };
+
+        try {
+            const response = await fetch('save_data.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const textData = await response.text();
+            console.log('Data hasil dari server:', textData);
+
+            if (textData.trim() === '') {
+                console.error('Empty response from the server.');
+                return;
+            }
+
+            const parsedData = JSON.parse(textData);
+            console.log('Data hasil berhasil di-parse:', parsedData);
+
+            var hasilhitung = hasilhitungjson || [];
+    
+            saveDataDetail(parsedData.last_id, hasilhitung);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    function saveDataDetail(idHasil, hasilhitung) {
+        var detailDataArray = [];
+
+        hasilhitung.forEach(rule => {
+            var detailData = {
+                id_hasil: idHasil,
+                nama_alternatif: rule.nama,
+                number: rule.nilai_akhir,
+                rank: rule.ranking,
+            };
+            detailDataArray.push(detailData);
+        });
+        console.log(detailDataArray);
+
+        fetch('save_data_detail.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ detailDataArray }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data detail hasil successfully saved:', data);
+                // Add your logic or response handling here
+                setTimeout(function () {
+                    document.getElementById('saveButton').disabled = true;
+                }, 100); // Adjust the delay as needed
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+</script>
+
 
 </body>
 
