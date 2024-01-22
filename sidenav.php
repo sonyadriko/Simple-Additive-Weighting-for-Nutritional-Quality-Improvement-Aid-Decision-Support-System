@@ -52,6 +52,15 @@
                                 <span class="title">Hitung</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="history.php">
+                                <span class="icon-holder">
+                                    <!-- <i class="anticon anticon-appstore"></i> -->
+                                    <i class="anticon anticon-solution"></i>
+                                </span>
+                                <span class="title">History</span>
+                            </a>
+                        </li>
                        
                     </ul>
                 </div>

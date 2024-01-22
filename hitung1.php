@@ -1515,6 +1515,7 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
 
     async function saveData() {
         const date = new Date();
+        date.setUTCHours(date.getUTCHours() + 7);
         var data = {
             tanggal: date
         };
@@ -1544,7 +1545,7 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
             console.log('Data hasil berhasil di-parse:', parsedData);
 
             var hasilhitung = hasilhitungjson || [];
-    
+            document.getElementById('saveButton').disabled = true;
             saveDataDetail(parsedData.last_id, hasilhitung);
         } catch (error) {
             console.error('Error:', error);
