@@ -63,8 +63,9 @@
                                             </thead>
                                             <tbody>
                                             <?php 
+                $id_data = $_GET['GetID'];
                 $no = 1;
-                $get_data = mysqli_query($conn, "select * from sub_kriteria join kriteria on sub_kriteria.id_kriteria = kriteria.id_kriteria");
+                $get_data = mysqli_query($conn, "select * from sub_kriteria join kriteria on sub_kriteria.id_kriteria = kriteria.id_kriteria where sub_kriteria.id_kriteria = $id_data ");
                 while($display = mysqli_fetch_array($get_data)) {
                     $id = $display['id_sub_kriteria'];
                     $id_kriteria = $display['nama_kriteria'];

@@ -26,15 +26,22 @@
                                 <span class="title">Kriteria</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="sub_kriteria.php">
                                 <span class="icon-holder">
                                     <i class="anticon anticon-folder-add"></i>
-                                    <!-- <i class="anticon anticon-appstore"></i> -->
                                 </span>
                                 <span class="title">Sub Kriteria</span>
                             </a>
-                        </li>
+                        </li> -->
+                        <!-- <li class="nav <li class="nav-item">
+                            <a href="sub_kriteria.php">
+                                <span class="icon-holder">
+                                    <i class="anticon anticon-folder-add"></i>
+                                </span>
+                                <span class="title">Sub Kriteria</span>
+                            </a>
+                        </li> -->
                         <li class="nav-item">
                             <a href="penilaian.php">
                                 <span class="icon-holder">

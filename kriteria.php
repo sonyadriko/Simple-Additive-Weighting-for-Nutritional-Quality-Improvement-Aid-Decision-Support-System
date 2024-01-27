@@ -12,42 +12,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SAW</title>
-
-    <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="assets/images/logo/favicon.png"> -->
-
-    <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
-
 </head>
-
 <body>
     <div class="app">
         <div class="layout">
             <!-- Header START -->
          <?php include'header.php'?>
             <!-- Header END -->
-
             <!-- Side Nav START -->
          <?php include'sidenav.php'?>
-            
             <!-- Side Nav END -->
-
             <!-- Page Container START -->
             <div class="page-container">
-                
-
                 <!-- Content Wrapper START -->
                 <div class="main-content">
                     <div class="row">
                         <div class="col-md-6 col-lg-12">
                             <div class="card">
-
                                 <div class="card-body">
                                 <h4>Data Kriteria</h4>
-
                                     <!-- <a href="tambah_kriteria.php" class="btn btn-primary btn-user">Tambah Kriteria</a> -->
-                                    
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
@@ -73,7 +58,9 @@
                 
                 ?>
                 <td class="text-truncate"><?php echo $no ?></td>
-                <td class="text-truncate"><?php echo $nama ?></td>
+                <td class="text-truncate">
+                    <a href='sub_kriteria.php?GetID=<?php echo $id?>'><?php echo $nama ?></a>
+                </td>
                 <td class="text-truncate"><?php echo $bobot ?></td>
                 <td class="text-truncate"><?php echo $tipe ?></td>
                 <td class="text-truncate">
