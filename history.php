@@ -73,6 +73,9 @@
                 echo $formatTanggal; ?></td>
                 <td class="text-truncate">
                     <a href='detail_history.php?GetID=<?php echo $id ?>' class="btn btn-primary btn-user">Detail</a>                  
+                    <!-- <a href='delete_history.php?GetID=<?php echo $id ?>' class="btn btn-primary btn-user">Hapus</a>    -->
+                    <a href='delete_history.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
+
                 </td>
               </tr>
               <?php

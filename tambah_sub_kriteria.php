@@ -101,7 +101,7 @@ $kriteriaData = mysqli_fetch_all($queryKriteria, MYSQLI_ASSOC);
 
         if($insertResult){
             echo "<script>alert('Berhasil menambah data sub kriteria.')</script>";
-            echo "<script>window.location.href = 'sub_kriteria.php';</script>";
+            echo "<script>window.location.href = 'kriteria.php';</script>";
             // Alternatively, you can use: echo "<script>location.reload();</script>";
         } else {
             echo "Error: " . mysqli_error($conn);

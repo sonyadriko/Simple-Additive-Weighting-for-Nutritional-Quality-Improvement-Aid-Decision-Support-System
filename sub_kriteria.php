@@ -57,7 +57,7 @@
                                                     <th scope="col">Sub Kriteria</th>
                                                     <th scope="col">Bobot</th>
                                                     <!-- <th scope="col">Tipe</th> -->
-                                                    <th scope="col">Action</th>
+                                                    <!-- <th scope="col">Action</th> -->
                                                     <!-- <th scope="col">Handle</th> -->
                                                 </tr>
                                             </thead>
@@ -77,10 +77,10 @@
                 <td class="text-truncate"><?php echo $id_kriteria ?></td>
                 <td class="text-truncate"><?php echo $kategori ?></td>
                 <td class="text-truncate"><?php echo $bobot ?></td>
-                <td class="text-truncate">
+                <!-- <td class="text-truncate">
                     <a href='update_sub_kriteria.php?GetID=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Ubah' id='editbtn' class="btn btn-primary btn-user" ></a>
                     <a href='delete_sub_kriteria.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
-                </td>
+                </td> -->
               </tr>
               <?php
               $no++;
