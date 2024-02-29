@@ -13,7 +13,7 @@
         $password = (md5($_POST['password']));
 
 
-        $stmt = $conn->prepare("SELECT * FROM admin WHERE username = ?");
+        $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
