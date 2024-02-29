@@ -44,6 +44,7 @@
                 <h3>Halo, <?php echo $_SESSION['role']; ?> </h3>
                 <h3>Selamat datang di aplikasi sistem pendukung keputusan metode Simple Additive Weighting (SAW)</h3></br>
                     <div class="row">
+                        <?php if($_SESSION['role'] == 'admin'){?>
                         <div class="col-md-6 col-lg-3">
                             <div class="card">
                                 <div class="card-body">
@@ -65,6 +66,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php }?>
                         <div class="col-md-6 col-lg-3">
                             <div class="card">
                                 <div class="card-body">

@@ -46,7 +46,7 @@
                                 <div class="card-body">
                                 <h4>Data penilaian</h4>
 
-                                    <a href="tambah_penilaian.php" class="btn btn-primary btn-user">Tambah penilaian</a>
+                                <?php if($_SESSION['role'] == 'admin'){?><a href="tambah_penilaian.php" class="btn btn-primary btn-user">Tambah penilaian</a><?php }?>
                                     
                                     <div class="table-responsive">
                                         <table class="table table-hover">
@@ -60,7 +60,7 @@
                                                     <th scope="col">Tinggi</th>
                                                     <th scope="col">Lingkar Lengan</th>
                                                     <!-- <th scope="col">penilaian</th> -->
-                                                    <th scope="col">Action</th>
+                                                    <?php if($_SESSION['role'] == 'admin'){?>  <th scope="col">Action</th><?php }?>
                                                     <!-- <th scope="col">Handle</th> -->
                                                 </tr>
                                             </thead>
@@ -87,10 +87,12 @@
                 <td class="text-truncate"><?php echo $berat ?> KG</td>
                 <td class="text-truncate"><?php echo $tinggi ?> CM</td>
                 <td class="text-truncate"><?php echo $lila ?> CM</td>
+                <?php if($_SESSION['role'] == 'admin'){?>
                 <td class="text-truncate">
                     <a href='edit_penilaian.php?GetID=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Ubah' id='editbtn' class="btn btn-primary btn-user" ></a>
                     <a href='delete_penilaian.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
                 </td>
+                <?php }?>
               </tr>
               <?php
               $no++;

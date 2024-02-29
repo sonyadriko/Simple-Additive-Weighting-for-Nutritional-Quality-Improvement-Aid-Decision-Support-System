@@ -41,6 +41,14 @@
                         </li>
                         <?php } ?>
                         <li class="nav-item">
+                            <a href="penilaian.php">
+                                <span class="icon-holder">
+                                    <i class="anticon anticon-calculator"></i>
+                                </span>
+                                <span class="title">Penilaian</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="history.php">
                                 <span class="icon-holder">
                                     <!-- <i class="anticon anticon-appstore"></i> -->
