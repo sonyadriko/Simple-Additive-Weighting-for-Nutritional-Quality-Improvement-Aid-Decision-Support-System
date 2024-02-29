@@ -9,14 +9,10 @@
                                 <span class="title">Dashboard</span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="alternatif.php">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-appstore"></i>
-                                </span>
-                                <span class="title">Alternatif</span>
-                            </a>
-                        </li> -->
+                        <?php
+                        if($_SESSION['role'] == 'admin'){?>
+
+                        
                         <li class="nav-item">
                             <a href="kriteria.php">
                                 <span class="icon-holder">
@@ -26,22 +22,6 @@
                                 <span class="title">Kriteria</span>
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="sub_kriteria.php">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-folder-add"></i>
-                                </span>
-                                <span class="title">Sub Kriteria</span>
-                            </a>
-                        </li> -->
-                        <!-- <li class="nav <li class="nav-item">
-                            <a href="sub_kriteria.php">
-                                <span class="icon-holder">
-                                    <i class="anticon anticon-folder-add"></i>
-                                </span>
-                                <span class="title">Sub Kriteria</span>
-                            </a>
-                        </li> -->
                         <li class="nav-item">
                             <a href="penilaian.php">
                                 <span class="icon-holder">
@@ -59,6 +39,7 @@
                                 <span class="title">Hitung</span>
                             </a>
                         </li>
+                        <?php } ?>
                         <li class="nav-item">
                             <a href="history.php">
                                 <span class="icon-holder">

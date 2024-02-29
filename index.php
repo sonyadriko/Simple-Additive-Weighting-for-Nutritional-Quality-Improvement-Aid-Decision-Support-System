@@ -41,6 +41,8 @@
 
                 <!-- Content Wrapper START -->
                 <div class="main-content">
+                <h3>Halo, <?php echo $_SESSION['role']; ?> </h3>
+                <h3>Selamat datang di aplikasi sistem pendukung keputusan metode Simple Additive Weighting (SAW)</h3></br>
                     <div class="row">
                         <div class="col-md-6 col-lg-3">
                             <div class="card">
@@ -84,21 +86,27 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="col-md-6 col-lg-3">
+                        <div class="col-md-6 col-lg-3">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="media align-items-center">
-                                        <div class="avatar avatar-icon avatar-lg avatar-purple">
-                                            <i class="anticon anticon-user"></i>
-                                        </div>
+                                        <!-- <div class="avatar avatar-icon avatar-lg avatar-gold">
+                                            <i class="anticon anticon-profile"></i>
+                                        </div> -->
                                         <div class="m-l-15">
-                                            <h2 class="m-b-0">1,832</h2>
-                                            <p class="m-b-0 text-muted">Customers</p>
+                                            <h2 class="m-b-0">
+                                            <?php // Query to get total items
+                                            $sql = "SELECT COUNT(*) AS jumlah FROM hasil";
+                                            $resultBarang = $conn->query($sql); 
+                                            $hasilBarang = mysqli_fetch_array($resultBarang);
+                                            echo "{$hasilBarang['jumlah']}";?>
+                                            </h2>
+                                            <p class="m-b-0 text-muted">History</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <!-- Content Wrapper END -->
