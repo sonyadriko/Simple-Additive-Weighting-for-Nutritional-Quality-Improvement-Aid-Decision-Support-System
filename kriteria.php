@@ -54,8 +54,6 @@
                     $nama = $display['nama_kriteria'];
                     $bobot = $display['bobot_kriteria'];
                     $tipe = $display['tipe_kriteria'];
-
-                
                 ?>
                 <td class="text-truncate"><?php echo $no ?></td>
                 <td class="text-truncate">
@@ -77,10 +75,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                      
-                      
-                        
+                        </div>                        
                     </div>
                 </div>
                 <!-- Content Wrapper END -->

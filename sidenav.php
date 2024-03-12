@@ -11,8 +11,6 @@
                         </li>
                         <?php
                         if($_SESSION['role'] == 'admin'){?>
-
-                        
                         <li class="nav-item">
                             <a href="kriteria.php">
                                 <span class="icon-holder">
@@ -40,6 +38,8 @@
                             </a>
                         </li>
                         <?php } ?>
+                        <?php if($_SESSION['role'] == 'kepala puskesmas'){?>
+
                         <li class="nav-item">
                             <a href="penilaian.php">
                                 <span class="icon-holder">
@@ -48,6 +48,8 @@
                                 <span class="title">Penilaian</span>
                             </a>
                         </li>
+                        <?php } ?>
+
                         <li class="nav-item">
                             <a href="history.php">
                                 <span class="icon-holder">
