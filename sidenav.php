@@ -29,7 +29,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="hitung1.php">
+                            <a href="cek_hitung.php">
                                 <span class="icon-holder">
                                     <!-- <i class="anticon anticon-appstore"></i> -->
                                     <i class="anticon anticon-solution"></i>
