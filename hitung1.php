@@ -562,8 +562,17 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                             </thead>
                                             <tbody>
                                             <?php 
+
+                                                if(isset($_GET['id_penilaian'])) {
+                                                    // Get the id_penilaian values from the URL
+                                                    $selected_ids = $_GET['id_penilaian'];
+
+                                                    // Split the selected_ids string into an array
+                                                    $selected_ids_array = explode(",", $selected_ids);
+                                                
                                                 $no = 1;
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
+                                                $sql = "SELECT * FROM penilaian WHERE id_penilaian IN (".implode(",", $selected_ids_array).")";
+                                                $get_data = mysqli_query($conn, $sql);
 
                                                 while($display = mysqli_fetch_array($get_data)) {
                                                     $id = $display['id_penilaian'];
@@ -826,7 +835,8 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                             <tbody>
                                             <?php 
                                                 $no = 1;
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
+                                                $sql = "SELECT * FROM penilaian WHERE id_penilaian IN (".implode(",", $selected_ids_array).")";
+                                                $get_data = mysqli_query($conn, $sql);
 
                                                 while($display = mysqli_fetch_array($get_data)) {
                                                     $id = $display['id_penilaian'];
@@ -1023,7 +1033,8 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                             <tbody>
                                             <?php 
                                                 $no = 1;
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
+                                                $sql = "SELECT * FROM penilaian WHERE id_penilaian IN (".implode(",", $selected_ids_array).")";
+                                                $get_data = mysqli_query($conn, $sql);
 
                                                 $normalizedValues = [];
                                                 $maxValues = [
@@ -1253,7 +1264,8 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                 $no = 1;
                                                 $bobot_kriteria = [];
                                                 $alternatif_nilai_akhir = [];
-                                                $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
+                                                $sql = "SELECT * FROM penilaian WHERE id_penilaian IN (".implode(",", $selected_ids_array).")";
+                                                $get_data = mysqli_query($conn, $sql);
 
                                                 $q = mysqli_query($conn, "SELECT bobot_kriteria FROM kriteria ORDER BY id_kriteria");
                                                 while($row = mysqli_fetch_assoc($q)) {
@@ -1453,6 +1465,8 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
                                                 // Echo the JSON
                                                 // echo $alternatif_nilai_akhir_json;
 
+                                            }
+                                            
                                                 ?>
                                             </tr>
                                             </tbody>
