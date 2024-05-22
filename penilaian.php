@@ -25,17 +25,17 @@
     <div class="app">
         <div class="layout">
             <!-- Header START -->
-         <?php include'header.php'?>
+            <?php include'header.php'?>
             <!-- Header END -->
 
             <!-- Side Nav START -->
-         <?php include'sidenav.php'?>
-            
+            <?php include'sidenav.php'?>
+
             <!-- Side Nav END -->
 
             <!-- Page Container START -->
             <div class="page-container">
-                
+
 
                 <!-- Content Wrapper START -->
                 <div class="main-content">
@@ -44,10 +44,11 @@
                             <div class="card">
 
                                 <div class="card-body">
-                                <h4>Data penilaian</h4>
+                                    <h4>Data Balita</h4>
 
-                                <?php if($_SESSION['role'] == 'admin'){?><a href="tambah_penilaian.php" class="btn btn-primary btn-user">Tambah penilaian</a><?php }?>
-                                    
+                                    <?php if($_SESSION['role'] == 'admin'){?><a href="tambah_penilaian.php"
+                                        class="btn btn-primary btn-user">Tambah penilaian</a><?php }?>
+
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
@@ -60,12 +61,13 @@
                                                     <th scope="col">Tinggi</th>
                                                     <th scope="col">Lingkar Lengan</th>
                                                     <!-- <th scope="col">penilaian</th> -->
-                                                    <?php if($_SESSION['role'] == 'admin'){?>  <th scope="col">Action</th><?php }?>
+                                                    <?php if($_SESSION['role'] == 'admin'){?> <th scope="col">Action
+                                                    </th><?php }?>
                                                     <!-- <th scope="col">Handle</th> -->
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                            <?php 
+                                                <?php 
                 $no = 1;
                 $get_data = mysqli_query($conn, "SELECT * FROM penilaian");
 
@@ -80,21 +82,27 @@
 
                 
                 ?>
-                <td class="text-truncate"><?php echo $no ?></td>
-                <td class="text-truncate"><?php echo $nama ?></td>
-                <td class="text-truncate"><?php echo $jenis_kelamin ?></td>
-                <td class="text-truncate"><?php echo $umur ?> Bulan</td>
-                <td class="text-truncate"><?php echo $berat ?> KG</td>
-                <td class="text-truncate"><?php echo $tinggi ?> CM</td>
-                <td class="text-truncate"><?php echo $lila ?> CM</td>
-                <?php if($_SESSION['role'] == 'admin'){?>
-                <td class="text-truncate">
-                    <a href='edit_penilaian.php?GetID=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Ubah' id='editbtn' class="btn btn-primary btn-user" ></a>
-                    <a href='delete_penilaian.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
-                </td>
-                <?php }?>
-              </tr>
-              <?php
+                                                <td class="text-truncate"><?php echo $no ?></td>
+                                                <td class="text-truncate"><?php echo $nama ?></td>
+                                                <td class="text-truncate"><?php echo $jenis_kelamin ?></td>
+                                                <td class="text-truncate"><?php echo $umur ?> Bulan</td>
+                                                <td class="text-truncate"><?php echo $berat ?> KG</td>
+                                                <td class="text-truncate"><?php echo $tinggi ?> CM</td>
+                                                <td class="text-truncate"><?php echo $lila ?> CM</td>
+                                                <?php if($_SESSION['role'] == 'admin'){?>
+                                                <td class="text-truncate">
+                                                    <a href='edit_penilaian.php?GetID=<?php echo $id ?>'
+                                                        style="text-decoration: none; list-style: none;"><input
+                                                            type='submit' value='Ubah' id='editbtn'
+                                                            class="btn btn-primary btn-user"></a>
+                                                    <a href='delete_penilaian.php?Del=<?php echo $id ?>'
+                                                        style="text-decoration: none; list-style: none;"><input
+                                                            type='submit' value='Hapus' id='delbtn'
+                                                            class="btn btn-primary btn-user"></a>
+                                                </td>
+                                                <?php }?>
+                                                </tr>
+                                                <?php
               $no++;
                 }
               ?>
@@ -104,9 +112,9 @@
                                 </div>
                             </div>
                         </div>
-                      
-                      
-                        
+
+
+
                     </div>
                 </div>
                 <!-- Content Wrapper END -->
@@ -122,11 +130,11 @@
             </div>
             <!-- Page Container END -->
 
-          
+
         </div>
     </div>
 
-    
+
     <!-- Core Vendors JS -->
     <script src="assets/js/vendors.min.js"></script>
 
