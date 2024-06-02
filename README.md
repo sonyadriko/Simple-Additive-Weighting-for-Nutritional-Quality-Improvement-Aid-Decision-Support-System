@@ -26,5 +26,10 @@ Providing nutritional aid effectively requires careful consideration of multiple
   <li>MySQL: Used for storing data related to nutritional aid packages, criteria, and weights.</li>
   <li>HTML/CSS/JavaScript: Used for developing the user interface.</li>
 </ul>
+<h2>Contribution</h2>
+Contributions are welcome! Please open an issue for discussion or submit a pull request for improvements or new features.
+<h2>License</h2>
+This project is licensed under the MIT License - see the LICENSE file for details.
+
 
 
