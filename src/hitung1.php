@@ -1,5 +1,5 @@
 <?php
- include 'koneksi.php';
+ include '../config/database.php';
  session_start();
   if (!isset($_SESSION['id_admin'])) {
       header("Location: login.php");
@@ -511,10 +511,10 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
     <title>SAW</title>
 
     <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="assets/images/logo/favicon.png"> -->
+    <!-- <link rel="shortcut icon" href="../assets/images/logo/favicon.png"> -->
 
     <!-- Core css -->
-    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="../assets/css/app.min.css" rel="stylesheet">
 
 </head>
 
@@ -1499,14 +1499,14 @@ $sd_plus_1_imt_24['perempuan'] =  [17.1, 17.1, 17.0, 17.0, 17.0, 17.0, 16.9, 16.
 
     
     <!-- Core Vendors JS -->
-    <script src="assets/js/vendors.min.js"></script>
+    <script src="../assets/js/vendors.min.js"></script>
 
     <!-- page js -->
-    <script src="assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="assets/js/pages/dashboard-default.js"></script>
+    <script src="../assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="../assets/js/pages/dashboard-default.js"></script>
 
     <!-- Core JS -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="../assets/js/app.min.js"></script>
 
     <script>
     document.addEventListener("DOMContentLoaded", function () {

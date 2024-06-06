@@ -1,9 +1,9 @@
 <?php
- include 'koneksi.php';
- session_start();
-  if (!isset($_SESSION['id_admin'])) {
-      header("Location: login.php");
-  }
+include '../config/database.php';
+session_start();
+if (!isset($_SESSION['id_admin'])) {
+    header('Location: login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,10 +14,10 @@
     <title>SAW</title>
 
     <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="assets/images/logo/favicon.png"> -->
+    <!-- <link rel="shortcut icon" href="../assets/images/logo/favicon.png"> -->
 
     <!-- Core css -->
-    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="../assets/css/app.min.css" rel="stylesheet">
 
 </head>
 
@@ -25,11 +25,11 @@
     <div class="app">
         <div class="layout">
             <!-- Header START -->
-            <?php include'header.php'?>
+            <?php include 'header.php'; ?>
             <!-- Header END -->
 
             <!-- Side Nav START -->
-            <?php include'sidenav.php'?>
+            <?php include 'sidenav.php'; ?>
 
             <!-- Side Nav END -->
 
@@ -82,20 +82,20 @@
 
                 
                 ?>
-                                                <td class="text-truncate"><?php echo $no ?></td>
-                                                <td class="text-truncate"><?php echo $nama ?></td>
-                                                <td class="text-truncate"><?php echo $jenis_kelamin ?></td>
-                                                <td class="text-truncate"><?php echo $umur ?> Bulan</td>
-                                                <td class="text-truncate"><?php echo $berat ?> KG</td>
-                                                <td class="text-truncate"><?php echo $tinggi ?> CM</td>
-                                                <td class="text-truncate"><?php echo $lila ?> CM</td>
+                                                <td class="text-truncate"><?php echo $no; ?></td>
+                                                <td class="text-truncate"><?php echo $nama; ?></td>
+                                                <td class="text-truncate"><?php echo $jenis_kelamin; ?></td>
+                                                <td class="text-truncate"><?php echo $umur; ?> Bulan</td>
+                                                <td class="text-truncate"><?php echo $berat; ?> KG</td>
+                                                <td class="text-truncate"><?php echo $tinggi; ?> CM</td>
+                                                <td class="text-truncate"><?php echo $lila; ?> CM</td>
                                                 <?php if($_SESSION['role'] == 'admin'){?>
                                                 <td class="text-truncate">
-                                                    <a href='edit_penilaian.php?GetID=<?php echo $id ?>'
+                                                    <a href='edit_penilaian.php?GetID=<?php echo $id; ?>'
                                                         style="text-decoration: none; list-style: none;"><input
                                                             type='submit' value='Ubah' id='editbtn'
                                                             class="btn btn-primary btn-user"></a>
-                                                    <a href='delete_penilaian.php?Del=<?php echo $id ?>'
+                                                    <a href='delete_penilaian.php?Del=<?php echo $id; ?>'
                                                         style="text-decoration: none; list-style: none;"><input
                                                             type='submit' value='Hapus' id='delbtn'
                                                             class="btn btn-primary btn-user"></a>
@@ -136,14 +136,14 @@
 
 
     <!-- Core Vendors JS -->
-    <script src="assets/js/vendors.min.js"></script>
+    <script src="../assets/js/vendors.min.js"></script>
 
     <!-- page js -->
-    <script src="assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="assets/js/pages/dashboard-default.js"></script>
+    <script src="../assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="../assets/js/pages/dashboard-default.js"></script>
 
     <!-- Core JS -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="../assets/js/app.min.js"></script>
 
 </body>
 

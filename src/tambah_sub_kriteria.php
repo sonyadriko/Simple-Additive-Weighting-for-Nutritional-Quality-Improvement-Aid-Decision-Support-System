@@ -1,5 +1,5 @@
 <?php
- include 'koneksi.php';
+ include '../config/database.php';
  session_start();
   if (!isset($_SESSION['id_admin'])) {
       header("Location: login.php");
@@ -15,7 +15,7 @@ $kriteriaData = mysqli_fetch_all($queryKriteria, MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SAW</title>
     <!-- Core css -->
-    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="../assets/css/app.min.css" rel="stylesheet">
 
 </head>
 
@@ -75,20 +75,20 @@ $kriteriaData = mysqli_fetch_all($queryKriteria, MYSQLI_ASSOC);
 
     
     <!-- Core Vendors JS -->
-    <script src="assets/js/vendors.min.js"></script>
+    <script src="../assets/js/vendors.min.js"></script>
 
     <!-- page js -->
-    <script src="assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="assets/js/pages/dashboard-default.js"></script>
+    <script src="../assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="../assets/js/pages/dashboard-default.js"></script>
 
     <!-- Core JS -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="../assets/js/app.min.js"></script>
 
 </body>
 
 </html>
 <?php 
-    include 'koneksi.php';
+    include '../config/database.php';
 
     if(isset($_POST['submit'])){
         $kriteria = $_POST['selectKriteria'];

@@ -1,5 +1,5 @@
 <?php
- include 'koneksi.php';
+ include '../config/database.php';
  session_start();
   if (!isset($_SESSION['id_admin'])) {
       header("Location: login.php");
@@ -14,10 +14,10 @@
     <title>SAW</title>
 
     <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="assets/images/logo/favicon.png"> -->
+    <!-- <link rel="shortcut icon" href="../assets/images/logo/favicon.png"> -->
 
     <!-- Core css -->
-    <link href="assets/css/app.min.css" rel="stylesheet">
+    <link href="../assets/css/app.min.css" rel="stylesheet">
 
 </head>
 
@@ -35,6 +35,8 @@
 
             <!-- Page Container START -->
             <div class="page-container">
+                
+
                 <!-- Content Wrapper START -->
                 <div class="main-content">
                     <div class="row">
@@ -42,16 +44,17 @@
                             <div class="card">
 
                                 <div class="card-body">
-                                <h4>Data History Hitung</h4>
+                                <h4>Data Alternatif</h4>
 
-                                    <!-- <a href="tambah_kriteria.php" class="btn btn-primary btn-user">Tambah Kriteria</a> -->
+                                    <a href="tambah_alternatif.php" class="btn btn-primary btn-user">Tambah Alternatif</a>
                                     
                                     <div class="table-responsive">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">No</th>
-                                                    <th scope="col">Tanggal</th>
+                                                    <th scope="col">Alternatif</th>
+                                                    <th scope="col">Jenis Kelamin</th>
                                                     <th scope="col">Action</th>
                                                     <!-- <th scope="col">Handle</th> -->
                                                 </tr>
@@ -59,23 +62,20 @@
                                             <tbody>
                                             <?php 
                 $no = 1;
-                $get_data = mysqli_query($conn, "select * from hasil");
+                $get_data = mysqli_query($conn, "select * from alternatif");
                 while($display = mysqli_fetch_array($get_data)) {
-                    $id = $display['id_hasil'];
-                    $tanggal = $display['tanggal'];
-                
+                    $id = $display['id_alternatif'];
+                    $nama = $display['nama_alternatif'];
+                    $jeniskel = $display['jenis_kelamin'];
 
                 
                 ?>
                 <td class="text-truncate"><?php echo $no ?></td>
-                <td class="text-truncate"><?php 
-                  $formatTanggal = date('l, d F Y H:i:s', strtotime($tanggal));
-                echo $formatTanggal; ?></td>
+                <td class="text-truncate"><?php echo $nama ?></td>
+                <td class="text-truncate"><?php echo $jeniskel ?></td>
                 <td class="text-truncate">
-                    <a href='detail_history.php?GetID=<?php echo $id ?>' class="btn btn-primary btn-user">Detail</a>                  
-                    <!-- <a href='delete_history.php?GetID=<?php echo $id ?>' class="btn btn-primary btn-user">Hapus</a>    -->
-                    <a href='delete_history.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
-
+                    <a href='edit_alternatif.php?GetID=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Ubah' id='editbtn' class="btn btn-primary btn-user" ></a>
+                    <a href='delete_barang.php?Del=<?php echo $id ?>' style="text-decoration: none; list-style: none;"><input type='submit' value='Hapus' id='delbtn' class="btn btn-primary btn-user" ></a>                       
                 </td>
               </tr>
               <?php
@@ -112,14 +112,14 @@
 
     
     <!-- Core Vendors JS -->
-    <script src="assets/js/vendors.min.js"></script>
+    <script src="../assets/js/vendors.min.js"></script>
 
     <!-- page js -->
-    <script src="assets/vendors/chartjs/Chart.min.js"></script>
-    <script src="assets/js/pages/dashboard-default.js"></script>
+    <script src="../assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="../assets/js/pages/dashboard-default.js"></script>
 
     <!-- Core JS -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="../assets/js/app.min.js"></script>
 
 </body>
 

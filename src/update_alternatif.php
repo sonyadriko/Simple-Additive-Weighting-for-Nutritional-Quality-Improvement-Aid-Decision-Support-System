@@ -1,6 +1,6 @@
 
 <?php 
-    include 'koneksi.php';
+    include '../config/database.php';
 
     $id_data = $_GET['id'];
     $nama = $_POST['inputnama'];

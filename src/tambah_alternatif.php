@@ -1,5 +1,5 @@
 <?php
- include 'koneksi.php';
+ include '../config/database.php';
  session_start();
   if (!isset($_SESSION['id_admin'])) {
       header("Location: login.php");
@@ -12,11 +12,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SAW</title>
-
-    <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="assets/images/logo/favicon.png"> -->
-
-    <!-- Core css -->
     <link href="assets/css/app.min.css" rel="stylesheet">
 
 </head>
@@ -25,17 +20,17 @@
     <div class="app">
         <div class="layout">
             <!-- Header START -->
-         <?php include'header.php'?>
+            <?php include'header.php'?>
             <!-- Header END -->
 
             <!-- Side Nav START -->
-         <?php include'sidenav.php'?>
-            
+            <?php include'sidenav.php'?>
+
             <!-- Side Nav END -->
 
             <!-- Page Container START -->
             <div class="page-container">
-                
+
 
                 <!-- Content Wrapper START -->
                 <div class="main-content">
@@ -48,7 +43,8 @@
                                     <form action="tambah_alternatif.php" method="post">
                                         <div class="form-group">
                                             <label for="inputnama">Nama</label>
-                                            <input type="text" class="form-control" id="inputnama" name="inputnama" placeholder="Nama Alternatif" required>       
+                                            <input type="text" class="form-control" id="inputnama" name="inputnama"
+                                                placeholder="Nama Alternatif" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="jeniskelamin">Jenis Kelamin</label>
@@ -77,11 +73,11 @@
             </div>
             <!-- Page Container END -->
 
-          
+
         </div>
     </div>
 
-    
+
     <!-- Core Vendors JS -->
     <script src="assets/js/vendors.min.js"></script>
 
@@ -96,7 +92,7 @@
 
 </html>
 <?php 
-    include 'koneksi.php';
+    include '../config/database.php';
 
     if(isset($_POST['submit'])){
         $nama_alt = mysqli_real_escape_string($conn, $_POST['inputnama']);

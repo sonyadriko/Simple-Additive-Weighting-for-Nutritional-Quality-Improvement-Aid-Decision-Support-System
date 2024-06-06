@@ -1,5 +1,5 @@
 <?php 
-include 'koneksi.php';
+include '../config/database.php';
 
 if (isset($_POST['submit'])) {
     $id_penilaian = $_GET['id'];  // Assuming 'id' is the parameter in your URL
