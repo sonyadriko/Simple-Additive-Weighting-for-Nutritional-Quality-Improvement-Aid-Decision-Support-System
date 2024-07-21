@@ -4,7 +4,7 @@
   if (!isset($_SESSION['id_admin'])) {
       header("Location: login.php");
   }
-  $queryAlternatif = mysqli_query($conn, "SELECT * FROM alternatif");
+  $queryAlternatif = mysqli_query($conn, "SELECT * FROM penilaian");
 $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -27,17 +27,17 @@ $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
     <div class="app">
         <div class="layout">
             <!-- Header START -->
-         <?php include'header.php'?>
+            <?php include'header.php'?>
             <!-- Header END -->
 
             <!-- Side Nav START -->
-         <?php include'sidenav.php'?>
-            
+            <?php include'sidenav.php'?>
+
             <!-- Side Nav END -->
 
             <!-- Page Container START -->
             <div class="page-container">
-                
+
 
                 <!-- Content Wrapper START -->
                 <div class="main-content">
@@ -60,7 +60,8 @@ $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
                                         </div> -->
                                         <div class="form-group">
                                             <label for="inputalternatif">Alternatif</label>
-                                            <input type="text" class="form-control" id="inputalternatif" name="inputalternatif" placeholder="Masukan Alternatif" required>       
+                                            <input type="text" class="form-control" id="inputalternatif"
+                                                name="inputalternatif" placeholder="Masukan Alternatif" required>
                                         </div>
                                         <div class="form-group">
                                             <label for="jeniskelamin">Jenis Kelamin</label>
@@ -71,19 +72,23 @@ $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
                                         </div>
                                         <div class="form-group">
                                             <label for="inputumur">Umur (Bulan)</label>
-                                            <input type="text" class="form-control" id="inputumur" name="inputumur" placeholder="Masukan Umur (Bulan)..." required>       
+                                            <input type="text" class="form-control" id="inputumur" name="inputumur"
+                                                placeholder="Masukan Umur (Bulan)..." required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputberat">Berat (KG)</label>
-                                            <input type="text" class="form-control" id="inputberat" name="inputberat" placeholder="Masukan Berat (KG)..." required>       
+                                            <input type="text" class="form-control" id="inputberat" name="inputberat"
+                                                placeholder="Masukan Berat (KG)..." required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputtinggi">Tinggi (CM)</label>
-                                            <input type="text" class="form-control" id="inputtinggi" name="inputtinggi" placeholder="Masukan Tinggi (CM)..." required>       
+                                            <input type="text" class="form-control" id="inputtinggi" name="inputtinggi"
+                                                placeholder="Masukan Tinggi (CM)..." required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputnama">Lingkar Lengan (CM)</label>
-                                            <input type="text" class="form-control" id="inputlila" name="inputlila" placeholder="Masukan Lingkar Lengan (CM)..." required>       
+                                            <input type="text" class="form-control" id="inputlila" name="inputlila"
+                                                placeholder="Masukan Lingkar Lengan (CM)..." required>
                                         </div>
                                         <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button>
                                     </form>
@@ -105,11 +110,11 @@ $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
             </div>
             <!-- Page Container END -->
 
-          
+
         </div>
     </div>
 
-    
+
     <!-- Core Vendors JS -->
     <script src="../assets/js/vendors.min.js"></script>
 
@@ -171,5 +176,3 @@ if (isset($_POST['submit'])) {
     // }
 }
 ?>
-
-

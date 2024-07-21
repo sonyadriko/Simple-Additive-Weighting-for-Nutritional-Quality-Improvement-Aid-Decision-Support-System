@@ -4,7 +4,7 @@
   if (!isset($_SESSION['id_admin'])) {
       header("Location: login.php");
   }
-    $queryAlternatif = mysqli_query($conn, "SELECT * FROM alternatif");
+    $queryAlternatif = mysqli_query($conn, "SELECT * FROM penilaian");
     $alternatifData = mysqli_fetch_all($queryAlternatif, MYSQLI_ASSOC);
 
     $id_data = $_GET['GetID'];
@@ -40,17 +40,17 @@
     <div class="app">
         <div class="layout">
             <!-- Header START -->
-         <?php include'header.php'?>
+            <?php include'header.php'?>
             <!-- Header END -->
 
             <!-- Side Nav START -->
-         <?php include'sidenav.php'?>
-            
+            <?php include'sidenav.php'?>
+
             <!-- Side Nav END -->
 
             <!-- Page Container START -->
             <div class="page-container">
-                
+
 
                 <!-- Content Wrapper START -->
                 <div class="main-content">
@@ -63,30 +63,44 @@
                                     <form action="update_penilaian.php?id=<?php echo $id_data ?>" method="post">
                                         <div class="form-group">
                                             <label for="selectAlternatif">Alternatif</label>
-                                            <input type="text" class="form-control" id="inputalternatif" name="inputalternatif" value="<?php echo $nama ?>" placeholder="Masukan Alternatif..."  required>       
+                                            <input type="text" class="form-control" id="inputalternatif"
+                                                name="inputalternatif" value="<?php echo $nama ?>"
+                                                placeholder="Masukan Alternatif..." required>
                                         </div>
                                         <div class="form-group">
                                             <label for="jeniskelamin">Jenis Kelamin</label>
                                             <select class="form-control" id="jeniskelamin" name="jeniskelamin">
-                                                <option value="laki-laki" <?php echo ($jeniskelamin == 'laki-laki') ? 'selected' : ''; ?>>Laki-laki</option>
-                                                <option value="perempuan" <?php echo ($jeniskelamin == 'perempuan') ? 'selected' : ''; ?>>Perempuan</option>
+                                                <option value="laki-laki"
+                                                    <?php echo ($jeniskelamin == 'laki-laki') ? 'selected' : ''; ?>>
+                                                    Laki-laki</option>
+                                                <option value="perempuan"
+                                                    <?php echo ($jeniskelamin == 'perempuan') ? 'selected' : ''; ?>>
+                                                    Perempuan</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputnama">Umur (Bulan)</label>
-                                            <input type="text" class="form-control" id="inputumur" name="inputumur" value="<?php echo $umur ?>" placeholder="Masukan Umur (Bulan)..." required>       
+                                            <input type="text" class="form-control" id="inputumur" name="inputumur"
+                                                value="<?php echo $umur ?>" placeholder="Masukan Umur (Bulan)..."
+                                                required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputnama">Berat (KG)</label>
-                                            <input type="text" class="form-control" id="inputberat" name="inputberat" value="<?php echo $berat ?>" placeholder="Masukan Berat (KG)..." required>       
+                                            <input type="text" class="form-control" id="inputberat" name="inputberat"
+                                                value="<?php echo $berat ?>" placeholder="Masukan Berat (KG)..."
+                                                required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputnama">Tinggi (CM)</label>
-                                            <input type="text" class="form-control" id="inputtinggi" name="inputtinggi" value="<?php echo $tinggi ?>" placeholder="Masukan Tinggi (CM)..." required>       
+                                            <input type="text" class="form-control" id="inputtinggi" name="inputtinggi"
+                                                value="<?php echo $tinggi ?>" placeholder="Masukan Tinggi (CM)..."
+                                                required>
                                         </div>
                                         <div class="form-group">
                                             <label for="inputnama">Lingkar Lengan (CM)</label>
-                                            <input type="text" class="form-control" id="inputlila" name="inputlila" value="<?php echo $lila ?>" placeholder="Masukan Lingkar Lengan (CM)..." required>       
+                                            <input type="text" class="form-control" id="inputlila" name="inputlila"
+                                                value="<?php echo $lila ?>" placeholder="Masukan Lingkar Lengan (CM)..."
+                                                required>
                                         </div>
                                         <input type="submit" class="btn btn-primary" name="submit" value="Update Data">
                                         <!-- <button type="submit" name="submit" class="btn btn-primary">Tambah Data</button> -->
@@ -109,11 +123,11 @@
             </div>
             <!-- Page Container END -->
 
-          
+
         </div>
     </div>
 
-    
+
     <!-- Core Vendors JS -->
     <script src="../assets/js/vendors.min.js"></script>
 
@@ -127,5 +141,3 @@
 </body>
 
 </html>
-
-
